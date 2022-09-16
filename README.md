@@ -5,12 +5,18 @@
 
 
  The first datasets contains students scores and the second is a banking dataset that contains customer information. 
-# Metadata and Details
-
+ 
+ 
 <h1>Table of Contents<span class="tocSkip"></span></h1>
 <div class="toc"><ul class="toc-item"><li><span><a href="#Problem-#A" data-toc-modified-id="Problem-#A-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Problem #A: Descriptive Statistics for the Final Scores of 4 Sections in a Data Science Course</a></span></li><li><span><a href="#Problem-#B" dasta-toc-modified-id="Problem-#B-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Problem #B: Exploratory Data Analysis and Visualization of a Bank’s Dataset   
 
-# Problem # A
+ 
+ 
+# Metadata and Details
+
+
+**Problem #A**
+
 ### Consider the given data related to the final scores of the four sections of a data science course: 
 
 
@@ -26,6 +32,30 @@ Data = {
 75, 75, 75, 75, 75, 75, 75]
 }
 ```
+
+Answer the following questions:
+
+*A*-1: Draw the histograms of scores for each of the above sections. Take bin size as 10 units, starting from score 40. Draw each histogram in one figure. Write the title on each histogram.
+
+*A*-2: Find the mean, median and mode for each of the above sections.
+
+*A*-3: Find the population variance and population standard deviation for each of the above sections.
+
+*A*-4: Find the upper and lower quartile for each of the above sections.
+
+*A*-5: Draw the box-plot for each of the above sections in one figure. Label x-axis with the name of the section.
+
+*A*-6: Do hypothesis testing for each section to check if the data follows normal distribution. Assume p-value less than 0.05 or 5% as very small.
+
+*A*-7: Do pair-wise student’s t-test to compare the means of two distribution. Set kwarg alternative=’two-sided’. Assume p-value less than 0.05 or 5% as very small.
+
+*A*-8: Do pair-wise Mann-Whitney U test to compare the underlying distributions. Set kwarg alternative=’two-sided’. Assume p-value less than 0.05 or 5% as very small.
+
+
+
+
+
+# Problem # A
 
 ## A-1
 
@@ -165,8 +195,6 @@ for section in Data: #dictionary’s default iterator is key
     We fail to reject the null hypothesis for Ravenklaw, since the p-value is 1.0
     
 
-    C:\Users\reood\anaconda3\lib\site-packages\scipy\stats\morestats.py:1757: UserWarning: Input data for shapiro has range zero. The results may not be accurate.
-      warnings.warn("Input data for shapiro has range zero. The results "
     
 
 ## A-7
@@ -206,6 +234,34 @@ for section in Data: #dictionary’s default iterator is key
     For Jriffindor and Ravenklaw: We fail to reject the null hypothesis, since the p-value is 1.0
     For Hufflebuff and Ravenklaw: We fail to reject the null hypothesis, since the p-value is 1.0
     
+
+
+**Problem #B**
+
+Consider the data given in CSV file **Bank Info**. Do the following tasks using the data:
+
+*B*-1: Draw the histograms of all numeric and non-numeric columns.
+
+*B*-2: Using the histograms generated in *B*-1, provide descriptive comments on the distribution of the following columns: loan amount, rate of interest, loan type, and property value
+
+*B*-3: Draw a plot between **loan amount** and **Gender**. What can you conclude from the plot?
+
+*B*-4: Draw a plot between **property value** and **loan amount**, differentiated by **Status**. For the de- faulted loans, what is the relationship between **property value** and **loan amount**. (*Note: **status** of 1 indicates that the loan has defaulted.*)
+
+*B*-5: Draw a plot between **property value** and **loan amount**, differentiated by **Status** and **Region**. Make the figsize=(9,4), and dpi=200. 
+
+*B*-6: Display a count plot of **credit type**, differentiated by **loan purpose**.
+
+*B*-7: Draw a plot on the **loan amount** differentiated by **business or commercial** and **occupancy type**.
+
+*B*-8: Add two new columns to the data frame with headers: **property value multiple** and **loan multiple**. The values in the new columns can be calculated using the following formulas:
+
+property value multiple = property value /  (*income ×* 12)
+
+loan multiple = loan amount /  (*income ×* 12)
+
+*B*-9: Plot the **Credit Score** in ascending order on the x-axis, and the above two new columns on y-axis
+
 
 # Problem # B
 ### Consider the data given in the CSV file and do the following tasks:
@@ -633,20 +689,7 @@ display(df.head())
 ```
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -817,10 +860,6 @@ sns.lineplot(markers=True, data=ndf)
 plt.show()
 ```
 
-    C:\Users\reood\anaconda3\lib\site-packages\numpy\lib\function_base.py:3961: RuntimeWarning: invalid value encountered in subtract
-      diff_b_a = subtract(b, a)
-    C:\Users\reood\anaconda3\lib\site-packages\numpy\lib\function_base.py:3961: RuntimeWarning: invalid value encountered in subtract
-      diff_b_a = subtract(b, a)
     
 
 
